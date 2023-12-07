@@ -1,6 +1,7 @@
-![commentarius](https://i.imgur.com/MH8UYQl.png)
 # commentarius
 2 words: blog, simple
+
+![commentarius](https://i.imgur.com/MH8UYQl.png)
 
 ## What is commentarius?
 The name commentarius comes from the Latin word for "journal." We think that implementing a journal/blog should be as simple as possible, without the need for databases or dynamic pages.
