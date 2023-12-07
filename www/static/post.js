@@ -15,13 +15,21 @@ function readgGet(name){
 // Define user input
 const postName = readgGet("p");
 const postFile = postName + ".md";
+const postFileURL = "posts/" + postFile;
 
-// Get post data
+// Get and parse post data
+fetch(postFileURL).then (response => response.text()).then (res => {
+    var converter = new showdown.Converter(),
+        postContent = converter.makeHtml(res);
 
-
-// Convert post data
+    document.getElementById("post-post-content").innerHTML = postContent;
+});
 
 // Show post to user
 document.getElementById("post-post-title").innerHTML = postName;
 document.title += " - " + postName;
-document.getElementById("post-post-content").innerHTML = postContent;
+
+// If no user input, show error
+if(!postName) {
+    document.getElementById("post-post-title").innerHTML = "ERROR p01.1 (!postName)";
+}
