@@ -1,12 +1,15 @@
 /*
     == commentarius | 2 words: blog, simple ==
 
-    SOURCE CODE VERSION 1.0
+    OPEN SOURCE BLOG ENGINE VERSION 1.0
+
+    Github: https://github.com/RESIB-Labs/commentarius
 
     Author: Ricardo González @ RESIB Labs ( www.ricardogonz.es - resiblabs.taniwa.es )
     License: GPL 3.0
 */
 
+// Read get request parameters
 function readgGet(name){
     if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search))
        return decodeURIComponent(name[1]);
@@ -16,6 +19,11 @@ function readgGet(name){
 const postName = readgGet("p");
 const postFile = postName + ".md";
 const postFileURL = "posts/" + postFile;
+
+// If no user input, show error
+if(!postName) {
+    postName = "ERROR p01.1 (!postName)";
+}
 
 // Get and parse post data
 fetch(postFileURL).then (response => response.text()).then (res => {
@@ -28,8 +36,3 @@ fetch(postFileURL).then (response => response.text()).then (res => {
 // Show post to user
 document.getElementById("post-post-title").innerHTML = postName;
 document.title += " - " + postName;
-
-// If no user input, show error
-if(!postName) {
-    document.getElementById("post-post-title").innerHTML = "ERROR p01.1 (!postName)";
-}

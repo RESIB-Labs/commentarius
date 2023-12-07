@@ -1,11 +1,19 @@
 /*
     == commentarius | 2 words: blog, simple ==
 
-    SOURCE CODE VERSION 1.0
+    OPEN SOURCE BLOG ENGINE VERSION 1.0
+
+    Github: https://github.com/RESIB-Labs/commentarius
 
     Author: Ricardo González @ RESIB Labs ( www.ricardogonz.es - resiblabs.taniwa.es )
     License: GPL 3.0
 */
+
+.container {
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 10px;
+}
 
 .site-header {
     margin-top: 15px;
@@ -21,7 +29,9 @@
     margin-bottom: 20px;
 }
 
-.post-list-post {}
+.post-list-post {
+    margin-bottom: 10px;
+}
 
 .post{
     margin-bottom: 20px;
@@ -31,4 +41,10 @@
 
 .post-post-content {}
 
-.site-footer {}
+.site-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+}
